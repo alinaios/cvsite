@@ -297,26 +297,28 @@ h2 {
 
 @media print {
   :root {
-    --paper: #ffffff;
-    --paper-strong: #ffffff;
-    --panel: #ffffff;
+    --paper: #f5efe5;
+    --paper-strong: #fdf8f1;
+    --panel: #fbf6ee;
     --ink: #22201d;
     --muted: #625c55;
-    --line: rgba(80, 71, 64, 0.14);
+    --line: rgba(80, 71, 64, 0.18);
     --shadow: none;
   }
 
   @page {
     size: A4;
-    margin: 14mm;
+    margin: 11mm;
   }
 
   html {
-    font-size: 11.5px;
+    font-size: 11.8px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   body {
-    background: #ffffff;
+    background: linear-gradient(180deg, #f4ede1 0%, #efe6d7 100%);
   }
 
   .page {
@@ -326,15 +328,80 @@ h2 {
 
   .hero,
   .content-grid {
-    gap: 10mm;
+    gap: 6mm;
+  }
+
+  .hero {
+    margin-bottom: 6mm;
   }
 
   .hero__inner,
   .contact-card,
   .panel {
-    border-radius: 18px;
+    border-radius: 20px;
     backdrop-filter: none;
+    background: var(--panel);
     break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .hero__inner {
+    padding: 7mm 8mm;
+  }
+
+  .contact-card,
+  .panel {
+    padding: 5.5mm 6mm;
+  }
+
+  .main-column,
+  .side-column {
+    gap: 6mm;
+  }
+
+  .role + .role {
+    margin-top: 4.5mm;
+    padding-top: 4.5mm;
+  }
+
+  .stats-list li,
+  .compact-block,
+  .contact-list li {
+    padding-top: 3mm;
+    padding-bottom: 3mm;
+  }
+
+  .hero__summary {
+    margin-top: 4.5mm;
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  h1 {
+    font-size: 3.55rem;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .section-heading {
+    margin-bottom: 4mm;
+  }
+
+  .pill-list,
+  .stats-list,
+  .plain-list {
+    gap: 3mm;
+  }
+
+  .tag-list {
+    gap: 2.5mm;
+  }
+
+  .tag-list li,
+  .pill-list li {
+    background: var(--paper-strong);
   }
 
   a {
